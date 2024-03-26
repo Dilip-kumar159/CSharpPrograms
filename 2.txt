@@ -1,0 +1,51 @@
+a) Boxing and Unboxing
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace lab2a
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ int i = 123;
+ object o = i;
+ int j = (int)o;
+ Console.WriteLine("The valuetype value before boxing is i=" + i);
+ Console.WriteLine("The objecttype value after boxing is o=" + o);
+ Console.WriteLine("The valuetype value after unboxing is j=" + j);
+ Console.ReadLine();
+ }
+ }
+}
+
+
+
+2b) Invalid Unboxing. 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace lab2b
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ int i = 123;
+ object o = i;
+ try
+ {
+ int j = (int)o;
+ Console.WriteLine("unboxing is successful");
+ }
+ catch (System.InvalidCastException e)
+ {
+ Console.WriteLine("Invalid boxing" + e.Message);
+ }
+ Console.ReadLine();
+ }
+ }
+}
